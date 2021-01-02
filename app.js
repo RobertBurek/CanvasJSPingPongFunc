@@ -7,10 +7,18 @@ const cnvH = cnv.height = 600;
 
 const ballSize = 16;
 
+let positionX = cnvW/2 - ballSize/2;
+let positionY = cnvH/2 - ballSize/2;
+let ballSpeedX = 2;
+let ballSpeedY = 2;
+
 function ball(){
-    ctx.arc(cnvW/2 - ballSize/2,cnvH/2 - ballSize/2, ballSize/2, 0, 2*Math.PI);
+    ctx.arc(positionX,positionY, ballSize/2, 0, 2*Math.PI);
     ctx.fillStyle = 'lime';
     ctx.fill();
+
+    positionX = positionX + ballSpeedX;
+    positionY = positionY + ballSpeedY;
 }
 
 function court() {
@@ -32,3 +40,5 @@ court();
 ball();
 playerRocket();
 computerRocket();
+
+setInterval(ball, 15);
