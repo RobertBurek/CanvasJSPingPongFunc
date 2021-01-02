@@ -14,10 +14,10 @@ let ballSpeedX = 4.5;
 let ballSpeedY = 3;
 
 function pickup(){
-    if (positionX <= centerBall || positionX >= cnvW - centerBall){
+    if (positionX <= centerBall || positionX >= (cnvW - centerBall)){
         ballSpeedX *= -1;
     }
-    if (positionY <= centerBall || positionY >= cnvH - centerBall){
+    if (positionY <= centerBall || positionY >= (cnvH - centerBall)){
         ballSpeedY *= -1;
     }
 }
