@@ -18,5 +18,17 @@ function court() {
     ctx.fillRect(0,0,cnvW,cnvH);
 }
 
+function playerRocket(){
+    ctx.fillStyle = 'green';
+    ctx.fillRect(20,150,20,150);
+}
+
+function computerRocket(){
+    ctx.fillStyle = 'blue';
+    ctx.fillRect(1160,250,20,150);
+}
+
 court();
 ball();
+playerRocket();
+computerRocket();
