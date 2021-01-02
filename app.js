@@ -6,11 +6,21 @@ const cnvW = cnv.width = 1200;
 const cnvH = cnv.height = 600;
 
 const ballSize = 16;
+const centerBall = ballSize / 2;
 
 let positionX = cnvW/2 - ballSize/2;
 let positionY = cnvH/2 - ballSize/2;
-let ballSpeedX = 2;
-let ballSpeedY = 2;
+let ballSpeedX = 4.5;
+let ballSpeedY = 3;
+
+function pickup(){
+    if (positionX <= centerBall || positionX >= cnvW - centerBall){
+        ballSpeedX *= -1;
+    }
+    if (positionY <= centerBall || positionY >= cnvH - centerBall){
+        ballSpeedY *= -1;
+    }
+}
 
 function ball(){
     ctx.beginPath();
@@ -20,6 +30,7 @@ function ball(){
     ctx.closePath();
     positionX = positionX + ballSpeedX;
     positionY = positionY + ballSpeedY;
+    pickup();
 }
 
 function court() {
