@@ -13,10 +13,11 @@ let ballSpeedX = 2;
 let ballSpeedY = 2;
 
 function ball(){
+    ctx.beginPath();
     ctx.arc(positionX,positionY, ballSize/2, 0, 2*Math.PI);
     ctx.fillStyle = 'lime';
     ctx.fill();
-
+    ctx.closePath();
     positionX = positionX + ballSpeedX;
     positionY = positionY + ballSpeedY;
 }
@@ -36,9 +37,11 @@ function computerRocket(){
     ctx.fillRect(1160,250,20,150);
 }
 
+function start(){
 court();
 ball();
 playerRocket();
 computerRocket();
+}
 
-setInterval(ball, 15);
+setInterval(start, 15);
